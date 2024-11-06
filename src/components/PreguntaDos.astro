@@ -23,6 +23,11 @@ import Button from "@/components/Button.astro";
     display: grid;
     gap: 1rem;
     grid-template-columns: 1fr 1fr 1fr;
+    view-timeline-name: --fade-botones;
+    view-timeline-axis: block;
+    animation-timeline: --fade-botones;
+    animation-name: fade-in;
+    animation-range: entry 0% cover 52%;
     @media (max-width: 400px) {
       grid-template-columns: 1fr 1fr;
     }

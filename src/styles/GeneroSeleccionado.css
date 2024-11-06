@@ -1,5 +1,7 @@
 .preguntauno {
   padding: var(--padding-container);
+
+
 }
 
 .generos {
@@ -9,6 +11,12 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
   cursor: pointer;
+  user-select: none;
+  view-timeline-name: --fade;
+  view-timeline-axis: block;
+  animation-timeline: --fade;
+  animation-name: fade-in;
+  animation-range: entry 0% cover 52%;
   @media (max-width: 400px) {
     grid-template-columns: 1fr 1fr;
     gap: 0.5rem;

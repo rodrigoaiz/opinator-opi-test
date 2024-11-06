@@ -2,24 +2,31 @@ import { useState } from "react";
 import { generos } from "@preguntas";
 
 const GeneroSeleccionado = () => {
-  const [selectedGenero, setSelectedGenero] = useState("");
+  const [selectedGeneros, setSelectedGeneros] = useState<string[]>([]);
 
-  const handleSelect = (genero: { nombre: string; img: string }) => {
-    console.log(`Selected genero: ${genero.nombre}`);
-    setSelectedGenero(genero.nombre);
+  const handleSelect = (event: React.MouseEvent, genero: { nombre: string; img: string }) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (selectedGeneros.includes(genero.nombre)) {
+      setSelectedGeneros(selectedGeneros.filter((nombre) => nombre !== genero.nombre));
+    } else {
+      setSelectedGeneros([...selectedGeneros, genero.nombre]);
+    }
+    console.log(`Selected generos: ${selectedGeneros}`);
   };
 
   return (
     <section className="preguntauno">
-      <h2>¿Cuál es el género que te gusta más?</h2>
+      <h2>¿Cuáles son los géneros que te gustan más?</h2>
       <div className="generos">
         {generos.map((genero) => (
           <div
             key={genero.nombre}
-            className={`generos__article ${selectedGenero === genero.nombre ? "selected" : ""}`}
-            onClick={() => handleSelect(genero)}
+            className={`generos__article ${selectedGeneros.includes(genero.nombre) ? "selected" : ""}`}
+            onClick={(event) => handleSelect(event, genero)}
           >
-            <img src={genero.img} alt={genero.nombre} />
+            <img src={genero.img} alt={genero.nombre} draggable="false" />
             <span>{genero.nombre}</span>
           </div>
         ))}

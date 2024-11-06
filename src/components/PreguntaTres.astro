@@ -9,7 +9,7 @@ import Button from "@/components/Button.astro";
     <input
       type="text"
       name="libro"
-      placeholder="Ingresa el nombre del libro"
+      placeholder="Ingresa el nombre del libro y el autor"
       required
     />
     <Button id="btn-4" texto="Sugerir" class="enviar" />
@@ -18,11 +18,17 @@ import Button from "@/components/Button.astro";
 <style>
   section {
     padding: var(--padding-container);
+    background: url("/fondo-blob.webp") no-repeat left top;
   }
   form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    view-timeline-name: --fade-form;
+    view-timeline-axis: block;
+    animation-timeline: --fade-form;
+    animation-name: fade-in;
+    animation-range: entry 0% cover 52%;
   }
   input[type="text"] {
     padding: 0.5rem;
