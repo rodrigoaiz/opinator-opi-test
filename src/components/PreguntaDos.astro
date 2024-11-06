@@ -1,0 +1,26 @@
+---
+import Button from "@/components/Button.astro";
+---
+
+<section class="preguntados">
+  <h2>¿Terminaste el libro? (honestamente)</h2>
+  <div class="botones">
+    <Button href="#" texto="Obvio" class="button--secondary" />
+    <Button href="#" texto="Casi casi" class="button--secondary" />
+    <Button href="#" texto="No" class="button--secondary" />
+  </div>
+</section>
+<style>
+  .preguntados {
+    padding: var(--padding-container);
+    background-color: var(--blue);
+  }
+  .botones{
+    padding: 2rem 0;
+    display:grid;
+    gap:1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .button--secondary {
+  }
+</style>

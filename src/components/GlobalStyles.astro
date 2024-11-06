@@ -1,5 +1,4 @@
 <style is:global>
-  @import "../styles/main.scss";
   @import "../styles/reset.css";
 
   :root {
@@ -22,6 +21,17 @@
   }
   body {
     font-family: var(--font-base);
+  }
+  section {
+    h2 {
+      font-size: var(--headings-lg);
+      color: var(--white);
+      line-height: 2rem;
+      text-wrap: pretty;
+      hyphens: none;
+      font-weight: 700;
+      text-align: center;
+    }
   }
   @keyframes fadeIn {
     from {

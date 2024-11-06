@@ -19,9 +19,16 @@ import "@fontsource-variable/raleway";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
-    <Fondo>
-      <slot />
-    </Fondo>
+  <body class="fondo">
+    <slot />
   </body>
 </html>
+<style>
+  .fondo {
+    background-image: url("/fondo.png");
+    background-repeat: repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: contain;
+  }
+</style>
