@@ -3,9 +3,17 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@img/*": ["public/*"],
-      "@preguntas": [ "./preguntas.json" ],
-    }
+      "@/*": [
+        "src/*"
+      ],
+      "@img/*": [
+        "public/*"
+      ],
+      "@preguntas": [
+        "./preguntas.json"
+      ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }
