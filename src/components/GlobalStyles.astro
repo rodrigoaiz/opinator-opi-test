@@ -1,5 +1,6 @@
 <style is:global>
   @import "../styles/main.scss";
+  @import "../styles/reset.css";
 
   :root {
     --red: rgb(230 57 70);
@@ -16,19 +17,10 @@
     --headings-lg: clamp(1.4rem, 1.7vw, 1.9rem);
     --font-base: "Raleway Variable", sans-serif;
     --transition-smooth: ease-in-out 0.5s all;
-  }
-  html {
-    scroll-behavior: smooth;
-    transition: var(--transition-smooth);
+    --padding-container:2rem;
   }
   body {
     font-family: var(--font-base);
-    background-color: #fccfbe;
-    color: var(--darkest-blue);
-    font-size: 1rem;
-    line-height: 1.5;
-    margin: 0;
-    padding: 0;
   }
   @keyframes fadeIn {
     from {

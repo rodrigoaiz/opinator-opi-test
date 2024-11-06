@@ -1,0 +1,49 @@
+---
+import LogoCirculo from "@/components/LogoCirculo.astro";
+import Slide from "@/components/Slide.astro";
+---
+
+<section class="hero">
+  <LogoCirculo class="logo" />
+  <article class="pregunta">
+    <div>
+      <img src="cerebroanimadolow.gif" alt="Cerebro leyendo" />
+    </div>
+    <div>
+      <h1>¿Qué tan interesante fue el último libro propuesto?</h1>
+    </div>
+  </article>
+  <Slide />
+</section>
+<style>
+  .hero {
+    background-color: var(--yellow);
+    padding: var(--padding-container);
+  }
+  .logo {
+    max-width: 175px;
+    color: var(--darkest-blue);
+    margin: 0 auto;
+  }
+  .pregunta {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    div{
+      flex: 1;
+    }
+    img {
+      width: 100%;
+    }
+    h1{
+      font-size: var(--headings-xl);
+      color: var(--darkest-blue);
+      line-height: 2rem;
+      text-wrap: pretty;
+      hyphens: none;
+      font-weight: 900;
+    }
+  }
+</style>

@@ -2,6 +2,8 @@
 interface Props {
   title: string;
 }
+import Fondo from "@/components/Fondo.astro";
+import GlobalStyles from "@/components/GlobalStyles.astro";
 const { title } = Astro.props;
 import "@fontsource-variable/raleway";
 ---
@@ -9,6 +11,7 @@ import "@fontsource-variable/raleway";
 <!doctype html>
 <html lang="en">
   <head>
+    <GlobalStyles />
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
@@ -17,34 +20,8 @@ import "@fontsource-variable/raleway";
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <Fondo>
+      <slot />
+    </Fondo>
   </body>
 </html>
-<style is:global>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
-  }
-  html {
-    font-family: system-ui, sans-serif;
-    background: #13151a;
-  }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
-  }
-</style>

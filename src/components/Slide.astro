@@ -1,0 +1,58 @@
+<div class="slider">
+  <header>
+    <div class="emoticono">🤯</div>
+  </header>
+  <article class="barra">
+    <img src="librito.webp" alt="libro" />
+    <div></div>
+  </article>
+  <footer>
+    <span>cambió mi vida</span>
+  </footer>
+</div>
+<style>
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .emoticono {
+    font-size: 3rem;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .barra {
+    margin: 2rem 0;
+    position: relative;
+    div {
+      background-color: var(--darkest-blue);
+      height: 1rem;
+      width: 100%;
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    img {
+      width: 50px;
+      position: relative;
+      z-index: 2;
+    }
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      font-size: var(--headings-xl);
+      color: var(--darkest-blue);
+      font-weight: 900;
+    }
+  }
+</style>

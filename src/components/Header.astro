@@ -1,0 +1,27 @@
+---
+import Logo from "./Logo.astro";
+---
+
+<header>
+  <div class="logo-container">
+    <Logo />
+  </div>
+</header>
+<style>
+  header {
+    min-width: 100%;
+    background: url('/fondo-header.webp') no-repeat center center/cover;
+    color: var(--white);
+    display: flex;
+    justify-content: end;
+
+  }
+  .logo-container {
+    background-color: var(--lightblue);
+    max-width: 288px;
+    padding: 1rem;
+    position: relative;
+    top: 1.5rem;
+    left: -1rem;
+  }
+</style>
