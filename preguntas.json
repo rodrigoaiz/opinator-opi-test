@@ -1,0 +1,41 @@
+
+{
+  "generos":[
+    {
+      "id": 1,
+      "nombre": "Terror",
+      "img": "terror.webp",
+      "variable": "terror"
+    },
+    {
+      "id": 2,
+      "nombre": "Romance",
+      "img": "romance.webp",
+      "variable": "romance"
+    },
+    {
+      "id": 3,
+      "nombre": "Ciencia Ficción",
+      "img": "ciencia_ficcion.webp",
+      "variable": "cienciaFiccion"
+    },
+    {
+      "id": 4,
+      "nombre": "Policial",
+      "img": "policial.webp",
+      "variable": "policial"
+    },
+    {
+      "id": 5,
+      "nombre": "Distopía",
+      "img": "distopia.webp",
+      "variable": "distopia"
+    },
+    {
+      "id": 6,
+      "nombre": "Histórico",
+      "img": "historico.webp",
+      "variable": "historico"
+    }
+  ]
+}
