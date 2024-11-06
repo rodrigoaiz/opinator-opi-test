@@ -1,0 +1,65 @@
+<style is:global>
+  @import "../styles/main.scss";
+
+  :root {
+    --red: rgb(230 57 70);
+    --white: rgb(241 250 238);
+    --darkest-blue: #0a1e3c;
+    --blue: #2cbdaa;
+    --lightblue: #8cd2e6;
+    --lightest-blue: #d6e6f2;
+    --orage: #f58122;
+    --yellow: #fac916;
+    --grey: #dcdce6;
+    --headings-xxl: clamp(4rem, 3.5vw, 3rem);
+    --headings-xl: clamp(1.7rem, 2.1vw, 2.2rem);
+    --headings-lg: clamp(1.4rem, 1.7vw, 1.9rem);
+    --font-base: "Raleway Variable", sans-serif;
+    --transition-smooth: ease-in-out 0.5s all;
+  }
+  html {
+    scroll-behavior: smooth;
+    transition: var(--transition-smooth);
+  }
+  body {
+    font-family: var(--font-base);
+    background-color: #fccfbe;
+    color: var(--darkest-blue);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes slideIn {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  @keyframes slideOut {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(100%);
+    }
+  }
+  @keyframes scale {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.2);
+    }
+  }
+</style>
