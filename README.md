@@ -1,6 +1,6 @@
 # Opinator Opi Test
 
-![alt text](image.png)
+![alt text](image-1.png)
 
 > Después de clonar el repositorio, entrar a la carpeta ejecturar en la terminal (se requiere Node.js)
 
