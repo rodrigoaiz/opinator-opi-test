@@ -11,7 +11,7 @@ const GeneroSeleccionado = () => {
 
   return (
     <section className="preguntauno">
-      <h2>¿Cuáles son los géneros que te gustan más?</h2>
+      <h2>¿Cuál es el género que te gusta más?</h2>
       <div className="generos">
         {generos.map((genero) => (
           <div

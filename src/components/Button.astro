@@ -1,13 +1,14 @@
 ---
 interface Props {
   texto: string;
-  href: string;
+  href?: string;
   class: string;
+  id?: string;
 }
-const { texto, href, class: className, ...rest } = Astro.props;
+const { texto, id, href, class: className, ...rest } = Astro.props;
 ---
 
-<a href={href} class:list={["button", className]} {...rest}>
+<a id={id} href={href} class:list={["button", className]} {...rest}>
   {texto}
 </a>
 
@@ -19,7 +20,6 @@ const { texto, href, class: className, ...rest } = Astro.props;
     font-size: 1rem;
     font-weight: 700;
     text-align: center;
-    text-transform: uppercase;
     cursor: pointer;
     transition: var(--transition-smooth);
   }

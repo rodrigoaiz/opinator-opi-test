@@ -31,6 +31,17 @@
     margin: 2rem 0;
     position: relative;
     height: 100px;
+    ::before{
+      content: "arrástrame";
+      position: absolute;
+      font-size: 1.1rem;
+      top: -1.2rem;
+      left: 20%;
+      color: var(--darkest-blue);
+      @media (max-width: 500px) {
+        left: 25%;
+      }
+    }
     div {
       background-color: var(--darkest-blue);
       height: 1rem;
@@ -50,6 +61,9 @@
       height: auto;
       pointer-events: unset;
       z-index: 2;
+      @media (max-width: 400px) {
+        max-width: 70px;
+      }
     }
   }
   footer {
@@ -70,7 +84,7 @@
   const span = document.querySelector("footer span");
   let isDragging = false;
   let startX;
-  let scrollLeft;
+
 
 
   function startDrag(e) {

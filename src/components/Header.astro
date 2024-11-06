@@ -10,18 +10,25 @@ import Logo from "./Logo.astro";
 <style>
   header {
     min-width: 100%;
-    background: url('/fondo-header.webp') no-repeat center center/cover;
+    background: url("/fondo-header.webp") no-repeat center center/cover;
     color: var(--white);
     display: flex;
     justify-content: end;
-
+    @media (max-width: 400px) {
+      justify-content: center;
+    }
   }
   .logo-container {
     background-color: var(--lightblue);
     max-width: 288px;
-    padding: 1rem;
+    padding:1.2rem 1.6rem;
     position: relative;
     top: 1.5rem;
     left: -1rem;
+    @media (max-width: 400px) {
+      max-width: 160px;
+      top: 1rem;
+      left: 0;
+    }
   }
 </style>

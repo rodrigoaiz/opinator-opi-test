@@ -5,21 +5,27 @@ import Button from "@/components/Button.astro";
 <section class="preguntados">
   <h2>¿Terminaste el libro? (honestamente)</h2>
   <div class="botones">
-    <Button href="#" texto="Obvio" class="button--secondary" />
-    <Button href="#" texto="Casi casi" class="button--secondary" />
-    <Button href="#" texto="No" class="button--secondary" />
+    <Button id="btn-1" texto="Obvio" class="button--secondary" />
+    <Button id="btn-2" texto="Casi casi" class="button--secondary" />
+    <Button id="btn-3" texto="No" class="button--secondary" />
   </div>
 </section>
 <style>
+  h2 {
+    color: var(--darkest-blue);
+  }
   .preguntados {
     padding: var(--padding-container);
     background-color: var(--blue);
   }
-  .botones{
+  .botones {
     padding: 2rem 0;
-    display:grid;
-    gap:1rem;
+    display: grid;
+    gap: 1rem;
     grid-template-columns: 1fr 1fr 1fr;
+    @media (max-width: 400px) {
+      grid-template-columns: 1fr 1fr;
+    }
   }
   .button--secondary {
   }

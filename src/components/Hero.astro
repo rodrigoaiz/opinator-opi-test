@@ -4,7 +4,9 @@ import Slide from "@/components/Slide.astro";
 ---
 
 <section class="hero">
-  <LogoCirculo class="logo" />
+  <div class="logo">
+    <LogoCirculo />
+  </div>
   <article class="pregunta">
     <div>
       <img src="cerebroanimadolow.gif" alt="Cerebro leyendo" />
@@ -21,9 +23,15 @@ import Slide from "@/components/Slide.astro";
     padding: var(--padding-container);
   }
   .logo {
-    max-width: 175px;
+    max-width: 205px;
     color: var(--darkest-blue);
     margin: 0 auto;
+    svg {
+      width: 100%;
+    }
+    @media (max-width: 400px) {
+      max-width: 250px;
+    }
   }
   .pregunta {
     margin: 2rem 0;
@@ -31,16 +39,25 @@ import Slide from "@/components/Slide.astro";
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
-    div{
+    div {
       flex: 1;
+    }
+    @media (max-width: 400px) {
+      flex-direction: column;
+      gap: 2rem;
+      text-align: center;
+      img {
+        max-width: 70%;
+        margin: 0 auto;
+      }
     }
     img {
       width: 100%;
     }
-    h1{
+    h1 {
       font-size: var(--headings-xl);
       color: var(--darkest-blue);
-      line-height: 2rem;
+      line-height: 2.5rem;
       text-wrap: pretty;
       hyphens: none;
       font-weight: 900;
