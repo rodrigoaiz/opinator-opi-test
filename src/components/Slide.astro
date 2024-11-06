@@ -1,6 +1,6 @@
 <div class="slider">
   <header>
-    <div class="emoticono">🤯</div>
+    <div class="emoticono">😐</div>
   </header>
   <article class="barra">
     <img src="librito.webp" alt="libro" />
@@ -30,6 +30,7 @@
   .barra {
     margin: 2rem 0;
     position: relative;
+    height: 100px;
     div {
       background-color: var(--darkest-blue);
       height: 1rem;
@@ -38,10 +39,16 @@
       z-index: 1;
       top: 50%;
       transform: translateY(-50%);
+      border-radius: 3rem;
     }
     img {
-      width: 50px;
-      position: relative;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: grab;
+      max-width: 100px;
+      height: auto;
+      pointer-events: unset;
       z-index: 2;
     }
   }
@@ -50,9 +57,62 @@
     justify-content: center;
     align-items: center;
     span {
-      font-size: var(--headings-xl);
+      font-size: 1.5rem;
+      font-weight: 700;
       color: var(--darkest-blue);
-      font-weight: 900;
     }
   }
 </style>
+
+<script is:inline>
+  const img = document.querySelector(".barra img");
+  const emoticono = document.querySelector(".emoticono");
+  const span = document.querySelector("footer span");
+  let isDragging = false;
+  let startX;
+  let scrollLeft;
+
+
+  function startDrag(e) {
+    e.preventDefault();
+    isDragging = true;
+    startX = (e.pageX || e.touches[0].pageX) - img.offsetLeft;
+    scrollLeft = img.offsetLeft;
+    img.style.cursor = "grabbing";
+  }
+
+  function stopDrag() {
+    isDragging = false;
+    img.style.cursor = "grab";
+  }
+
+  function drag(e) {
+    if (!isDragging) return;
+    e.preventDefault();
+
+    const x = (e.pageX || e.touches[0].pageX) - startX;
+    const maxScroll = img.parentElement.offsetWidth - img.offsetWidth;
+    const newX = Math.max(0, Math.min(x, maxScroll));
+    img.style.left = `${newX}px`;
+
+    const percentage = newX / maxScroll;
+    if (percentage < 0.33) {
+      emoticono.textContent = "😐";
+      span.textContent = "está más o menos";
+    } else if (percentage < 0.66) {
+      emoticono.textContent = "😊";
+      span.textContent = "nada mal";
+    } else {
+      emoticono.textContent = "🤯";
+      span.textContent = "cambió mi vida";
+    }
+  }
+
+  img.addEventListener("mousedown", startDrag);
+  document.addEventListener("mousemove", drag);
+  document.addEventListener("mouseup", stopDrag);
+
+  img.addEventListener("touchstart", startDrag);
+  document.addEventListener("touchmove", drag);
+  document.addEventListener("touchend", stopDrag);
+</script>
